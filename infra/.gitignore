@@ -1,0 +1,37 @@
+# Helm
+charts/*.tgz
+chart/charts/*.tgz
+*.tgz
+
+# Helm dependency cache
+chart/charts/*.tgz
+
+# Skaffold
+.skaffold/
+
+# Kubernetes secrets (never commit these)
+*-secrets.yaml
+secrets.yaml
+*.secret.yaml
+
+# Terraform (if used later)
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!example.tfvars
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.log

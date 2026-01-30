@@ -1,0 +1,17 @@
+# Parent chart values
+# Values for backend subchart
+backend:
+  image:
+    repository: backend
+    pullPolicy: IfNotPresent
+    tag: "latest"
+
+  replicaCount: 2
+
+  nameOverride: ""
+  fullnameOverride: ""
+
+  serviceAccount:
+    create: true
+    annotations: {}
+    name: ""

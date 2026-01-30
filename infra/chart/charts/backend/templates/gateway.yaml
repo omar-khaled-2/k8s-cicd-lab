@@ -1,0 +1,17 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: backend-route
+  labels:
+    app: backend
+spec:
+  parentRefs:
+    - name: main-gateway
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: {{ .Values.gateway.pathPrefix | default "/" }}
+      backendRefs:
+        - name: backend
+          port: 3000

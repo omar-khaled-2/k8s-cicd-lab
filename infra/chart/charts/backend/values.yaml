@@ -1,0 +1,23 @@
+# Default values for backend chart
+# These can be overridden by the parent chart
+
+image:
+  repository: backend
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+replicaCount: 2
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+gateway:
+  className: "istio"
+  name: "backend-gateway"
+  port: 80
+  pathPrefix: "/api"

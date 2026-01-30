@@ -1,0 +1,23 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+build:
+  artifacts:
+    - image: frontend
+      context: ../services/frontend
+      docker:
+        dockerfile: Dockerfile
+    - image: backend
+      context: ../services/backend
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        infer:
+          - src/**/*.ts
+      
+        
+
+deploy:
+  helm:
+    releases:
+      - name: k8s-cicd-lab
+        chartPath: chart
