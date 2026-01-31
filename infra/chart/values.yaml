@@ -2,4 +2,19 @@
 # Values for backend subchart
 backend:
   replicaCount: 1
+  database:
+    host: "postgresql"
+    port: 5432
+    username: "postgres"
+    password: "password"
+    name: "postgres"
 
+postgresql:
+  fullnameOverride: "postgresql"
+  auth:
+    username: "postgres"
+    password: "password"
+    database: "postgres"
+  primary:
+    persistence:
+      enabled: false 

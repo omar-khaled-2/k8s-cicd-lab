@@ -21,3 +21,10 @@ gateway:
   name: "backend-gateway"
   port: 80
   pathPrefix: "/api"
+
+database:
+  host: ""
+  port: 5432
+  username: ""
+  password: ""
+  name: ""
